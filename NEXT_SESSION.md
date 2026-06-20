@@ -26,3 +26,31 @@ Code change needed in extractors/s2_timeseries.py:
   freq = Counter(labels)
   weights = torch.tensor([1/freq[c] for c in le.classes_])
   criterion = nn.NLLLoss(weight=weights)
+
+## CRITICAL FINDING: Temporal Resolution Bottleneck (June 2026)
+
+Binary Beans vs Oats experiment:
+  Monthly CatBoost:  52.8%  (near random — information destroyed)
+  Dekad CatBoost:    75.0%  (+22.2% uplift)
+  TempCNN dekad:     72.2%
+
+CONCLUSION: The production CatBoost model (63.5%) was always
+working with destroyed information. Monthly aggregation removes
+the harvest timing signal that distinguishes Beans from Oats.
+
+## New Roadmap
+
+1. Retrain full 7-class CatBoost on FLAT DEKAD features [N, 585]
+   instead of monthly [N, 48]
+   Expected: 70%+ overall accuracy
+
+2. Retrain TempCNN fusion on dekad S2 + dekad SAR
+   (need to extract SAR at dekad resolution too)
+   Expected: 78%+
+
+3. The 1294 S2 dekad parcels already extracted are the right format
+   Just need SAR at dekad resolution for the 420 overlap parcels
+
+## Key insight
+Not more data. Not better model.
+FINER TEMPORAL RESOLUTION around harvest window (Jul-Aug).
