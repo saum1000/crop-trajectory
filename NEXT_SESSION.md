@@ -83,3 +83,29 @@ Irish data requirements July 1:
   SAR at 6-12 day resolution (NOT monthly)
   CDSE: extract all ascending + descending passes per parcel
   Target: 24+ SAR dates across growing season
+
+## NEW BENCHMARK — v19 SAR+S2 (June 20 2026)
+Dataset: 420 parcels, 439 features (13 SAR + 426 S2)
+5-fold CV verified OOF predictions:
+
+  Accuracy:  70.7%
+  Bal Acc:   69.6%  ← +9.6% over v18
+  Macro F1:  69.6%  ← +9.5% over v18
+
+Per-class F1:
+  Maize:        0.87 (best)
+  Barley:       0.74
+  Wheat:        0.69
+  Beans:        0.68
+  Oats:         0.66
+  Oilseed Rape: 0.54 (worst, only 55 parcels)
+
+Key SAR feature: VH/VV May mean
+  Barley: -8.13 dB  Wheat: -6.43 dB (+1.7 dB gap)
+
+v18 frozen: models/catboost_dekad_v18.pkl (70.9% acc, 60.0% bal)
+v19 to save: models/catboost_sar_s2_v19.pkl
+
+NEXT: July 1 — CDSE resets
+  Extract SAR for all 1294 S2 parcels
+  Retrain with full dataset → target 75%+ bal
