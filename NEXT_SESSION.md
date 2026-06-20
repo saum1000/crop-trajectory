@@ -54,3 +54,32 @@ the harvest timing signal that distinguishes Beans from Oats.
 ## Key insight
 Not more data. Not better model.
 FINER TEMPORAL RESOLUTION around harvest window (Jul-Aug).
+
+## Planque et al. 2021 — Full Algorithm Decoded
+
+Key discriminating feature (Barley vs Wheat):
+  NOT magnitude — TIMING of VH peak relative to VH/VV peak
+
+  Barley: VH peak COINCIDES with VH/VV peak
+          (awns cause simultaneous biomass + ear signal)
+  Wheat:  VH peak AFTER VH/VV peak
+          (ear emerges after flag leaf = after max biomass)
+
+Variables needed (all from Sentinel-1):
+  VH, VV, VH/VV ratio — parcel median per acquisition date
+
+Statistical tests:
+  Mann-Kendall: detects significant trend direction
+  Sen's slope:  quantifies slope magnitude (Ssl++, Ssl+, Ssl−, Ssl−−)
+  p-value threshold: 0.01
+
+Algorithm window periods for Ireland:
+  Winter separation:  Nov-Mar (VH/VV stable for spring crops)
+  Stem elongation:    Apr-May
+  Barley ifl window:  May-Jun  (dekads 13-18)
+  Wheat ifl window:   Jun-Jul  (dekads 16-21)
+
+Irish data requirements July 1:
+  SAR at 6-12 day resolution (NOT monthly)
+  CDSE: extract all ascending + descending passes per parcel
+  Target: 24+ SAR dates across growing season
