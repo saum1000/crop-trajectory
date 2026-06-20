@@ -40,14 +40,29 @@ def read_band_for_centroids(asset_key, assets, centroids_list):
         with rasterio.open(f"/vsicurl/{url}") as src:
             tf = pyproj.Transformer.from_crs("EPSG:4326",src.crs,always_xy=True)
             results = []
-            for lat,lng in centroids_list:
-                x,y = tf.transform(lng,lat)
-                row,col = src.index(x,y)
+            for item in centroids_list:
+                lat,lng = item[0],item[1]
+                polygon_coords = item[2] if len(item)>2 else None
+                if polygon_coords is not None:
+                    try:
+                        from shapely.geometry import Polygon
+                        from rasterio.mask import mask as rio_mask
+                        poly_proj=[tf.transform(c[0],c[1]) for c in polygon_coords]
+                        shapely_poly=Polygon(poly_proj)
+                        out,_=rio_mask(src,[shapely_poly.__geo_interface__],crop=True,nodata=0)
+                        data=out.flatten()
+                        valid=data[(data>100)&(data<60000)]
+                        results.append(float(np.median(valid))*0.0001 if len(valid)>0 else 0.0)
+                        continue
+                    except: pass
+                # Fallback: centroid window
+                x,y=tf.transform(lng,lat)
+                row,col=src.index(x,y)
                 if not(0<=row<src.height and 0<=col<src.width):
                     results.append(0.0); continue
-                win = Window(max(0,col-5),max(0,row-5),11,11)
-                data = src.read(1,window=win).flatten()
-                valid = data[(data>100)&(data<60000)]
+                win=Window(max(0,col-5),max(0,row-5),11,11)
+                data=src.read(1,window=win).flatten()
+                valid=data[(data>100)&(data<60000)]
                 results.append(float(np.median(valid))*0.0001 if len(valid)>0 else 0.0)
             return results
     except: return [0.0]*len(centroids_list)
