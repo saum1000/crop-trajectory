@@ -109,3 +109,24 @@ v19 to save: models/catboost_sar_s2_v19.pkl
 NEXT: July 1 — CDSE resets
   Extract SAR for all 1294 S2 parcels
   Retrain with full dataset → target 75%+ bal
+
+## FINAL VERIFIED BENCHMARKS (June 21 2026)
+
+All experiments converge to 60-64% balanced accuracy:
+
+CropFusion production (2025-26, 5 class, 250p): 64.0% bal
+SAR+S2 research (2018, 6 class, 322p):          63.0% bal  
+v18 S2-only (2018, 6 class, 1294p):             60.0% bal ← true baseline
+
+v19 69.6% claim: NOT reproducible — was from buggy OOF script
+
+Real ceiling for Ireland single-year: ~63-65% balanced
+SAR contribution over S2-only: +3% balanced
+
+To break 65%+ barrier:
+  1. Multi-year with weather normalization (ERA5)
+  2. More minority class parcels (OSR, Oats, Beans)
+  3. Geographically balanced training data (all 4 provinces)
+  4. Transformer needs 500+ samples per class
+
+Production system: CropFusion at 64% bal on live 2025-26 data
