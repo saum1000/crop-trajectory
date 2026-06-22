@@ -1,0 +1,242 @@
+[
+  {
+    "description": "s2_2025_b09",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2025_b08",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2025_b07",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2025_b06",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2025_b05",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2025_b04",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2025_b03",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2025_b02",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2025_b01",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2025_b00",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2023_b09",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2023_b08",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2023_b07",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2023_b06",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2023_b05",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2023_b04",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2023_b03",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2023_b02",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2023_b01",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2023_b00",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2022_b09",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2022_b08",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2022_b07",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2022_b06",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2022_b05",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2022_b04",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2022_b03",
+    "state": "READY"
+  },
+  {
+    "description": "s2_2022_b02",
+    "state": "RUNNING"
+  },
+  {
+    "description": "s2_2022_b01",
+    "state": "RUNNING"
+  },
+  {
+    "description": "s2_2022_b00",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "s2_2024_b09",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "s2_2024_b08",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "s2_2024_b07",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "s2_2024_b06",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "s2_2024_b05",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "s2_2024_b04",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "s2_2024_b03",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "s2_2024_b02",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "s2_2024_b01",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "s2_2024_b00",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "s2_2024_clean",
+    "state": "CANCELLED"
+  },
+  {
+    "description": "s2_2025_clean",
+    "state": "CANCELLED"
+  },
+  {
+    "description": "s2_2024_clean",
+    "state": "CANCELLED"
+  },
+  {
+    "description": "s2_2023_clean",
+    "state": "CANCELLED"
+  },
+  {
+    "description": "s2_2022_clean",
+    "state": "CANCELLED"
+  },
+  {
+    "description": "s2_2025_carlow",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "s2_2025_carlow",
+    "state": "FAILED"
+  },
+  {
+    "description": "s2_2024_carlow",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "s2_2023_carlow",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "s2_2022_carlow",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "s2_2025_carlow",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "s2_2024_carlow",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "s2_2023_carlow",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "s2_2022_carlow",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "s2_indices_2025_carlow",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "s2_indices_2023_carlow",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "multiyear_carlow_2022_2024",
+    "state": "CANCELLED"
+  },
+  {
+    "description": "s2_timeseries_2022_carlow",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "s2_timeseries_2024_carlow",
+    "state": "COMPLETED"
+  },
+  {
+    "description": "s2_timeseries_2024_carlow",
+    "state": "FAILED"
+  }
+]
