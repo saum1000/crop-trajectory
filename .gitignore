@@ -226,3 +226,5 @@ data/classified_parcels.geojson
 data/review_queue.geojson
 data/sar_cache/
 breizhcrops_dataset/
+pipeline_v2/gee_key.json
+pipeline_v2/gee_key.json
