@@ -228,3 +228,6 @@ data/sar_cache/
 breizhcrops_dataset/
 pipeline_v2/gee_key.json
 pipeline_v2/gee_key.json
+# Large data files
+pipeline_v2/data/s2/*.csv
+pipeline_v2/data/era5/
